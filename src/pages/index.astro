@@ -1,13 +1,16 @@
 ---
 /**
  * Veristio homepage (parent company site)
- * NOTE: Product links are internal routes. No product code belongs here.
+ * NOTE: Product links are external / configurable. No product code belongs here.
  */
 
 import "../styles/veristio.css";
 
-// Centralized product link — internal route
-const ULTRAPRO_URL = "/ultrapro";
+// Centralized product link — update here if it ever changes
+const ULTRAPRO_URL = "https://www.veristio.com/ultrapro";
+
+// If you later want env-based centralization, replace the line above with:
+// const ULTRAPRO_URL = import.meta.env.PUBLIC_ULTRAPRO_URL ?? "https://www.veristio.com/ultrapro";
 ---
 
 <!doctype html>
@@ -32,13 +35,9 @@ const ULTRAPRO_URL = "/ultrapro";
         <a class="brand" href="/" aria-label="Veristio home">Veristio</a>
 
         <nav class="nav" aria-label="Primary navigation">
-          <!-- Products hub (same tab) -->
-          <a href="/products">Products</a>
-
+          <a href={ULTRAPRO_URL} target="_blank" rel="noopener">Products</a>
           <a href="/about">About</a>
-
-          <!-- Legal landing (not Company placeholder) -->
-          <a href="/legal">Legal &amp; Trust</a>
+          <a href="/company">Legal &amp; Trust</a>
         </nav>
       </div>
     </header>
@@ -57,7 +56,7 @@ const ULTRAPRO_URL = "/ultrapro";
           </p>
 
           <div class="hero-links" aria-label="Primary links">
-            <a class="link primary" href={ULTRAPRO_URL}>View UltraPro →</a>
+            <a class="link primary" href={ULTRAPRO_URL} target="_blank" rel="noopener">View UltraPro →</a>
             <a class="link" href="/about">Learn more about Veristio →</a>
           </div>
         </div>
@@ -108,7 +107,7 @@ const ULTRAPRO_URL = "/ultrapro";
                 defensible evidence—without monitoring or configuration control.
               </p>
 
-              <a class="link primary" href={ULTRAPRO_URL}>View UltraPro →</a>
+              <a class="link primary" href={ULTRAPRO_URL} target="_blank" rel="noopener">View UltraPro →</a>
             </article>
 
             <p class="note">Additional Veristio products will be introduced over time.</p>
@@ -151,7 +150,7 @@ const ULTRAPRO_URL = "/ultrapro";
         <div class="footer-links" aria-label="Footer links">
           <div class="footer-col">
             <div class="footer-title">Products</div>
-            <a href={ULTRAPRO_URL}>UltraPro</a>
+            <a href={ULTRAPRO_URL} target="_blank" rel="noopener">UltraPro</a>
           </div>
 
           <div class="footer-col">
