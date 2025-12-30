@@ -1,13 +1,12 @@
 ---
 /**
  * Veristio homepage (parent company site)
- * NOTE:
- * - Product links are internal routes
- * - No product implementation code belongs here
+ * NOTE: Product links are internal routes. No product code belongs here.
  */
 
 import "../styles/veristio.css";
 
+// Centralized product link — internal route
 const ULTRAPRO_URL = "/ultrapro";
 ---
 
@@ -15,122 +14,151 @@ const ULTRAPRO_URL = "/ultrapro";
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Veristio — Verification-First Software</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Veristio — Verification-first software platforms</title>
     <meta
       name="description"
-      content="Verification-first software platforms built for clarity, trust, and defensible evidence."
+      content="Veristio develops focused tools that help organizations verify outcomes and produce defensible evidence—without unnecessary operational control."
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#fbfbfc" />
   </head>
 
   <body>
-    <!-- =====================
-         Top Navigation
-    ====================== -->
-    <header class="site-header">
-      <nav class="nav">
-        <a href="/" class="nav-logo">Veristio</a>
+    <header role="banner" class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="Veristio home">Veristio</a>
 
-        <div class="nav-links">
+        <nav class="nav" aria-label="Primary navigation">
+          <!-- Products hub (same tab) -->
           <a href="/products">Products</a>
+
           <a href="/about">About</a>
+
+          <!-- Legal landing (not Company placeholder) -->
           <a href="/legal">Legal &amp; Trust</a>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </header>
 
-    <!-- =====================
-         Hero
-    ====================== -->
     <main>
-      <section class="hero">
-        <p class="hero-eyebrow">Verification-first software platforms</p>
+      <!-- HERO -->
+      <section class="hero" aria-label="Veristio overview">
+        <div class="container">
+          <div class="kicker">Verification-first software platforms</div>
 
-        <h1>
-          Software platforms built for verification, clarity, and trust.
-        </h1>
+          <h1>Software platforms built for verification, clarity, and trust.</h1>
 
-        <p class="hero-description">
-          Veristio develops focused tools that help organizations verify outcomes
-          and produce defensible evidence — without unnecessary operational
-          control.
-        </p>
+          <p class="lead">
+            Veristio develops focused tools that help organizations verify outcomes and produce defensible
+            evidence—without unnecessary operational control.
+          </p>
 
-        <div class="hero-actions">
-          <a href={ULTRAPRO_URL} class="btn-primary">
-            View UltraPro →
-          </a>
-          <a href="/about" class="btn-secondary">
-            Learn more about Veristio →
-          </a>
+          <div class="hero-links" aria-label="Primary links">
+            <a class="link primary" href={ULTRAPRO_URL}>View UltraPro →</a>
+            <a class="link" href="/about">Learn more about Veristio →</a>
+          </div>
         </div>
       </section>
 
-      <!-- =====================
-           What We Build
-      ====================== -->
-      <section class="content">
-        <h2>What We Build</h2>
+      <!-- WHAT WE BUILD -->
+      <section class="section" aria-label="What we build">
+        <div class="container grid">
+          <div>
+            <h2>What We Build</h2>
+          </div>
 
-        <p>
-          Veristio builds verification-first software platforms.
-        </p>
+          <div>
+            <p>Veristio builds verification-first software platforms.</p>
 
-        <p>
-          Our products are designed to generate clear, defensible evidence —
-          without persistent monitoring, automated enforcement, or operational
-          lock-in.
-        </p>
+            <p>
+              Our products are designed to generate clear, defensible evidence—without persistent monitoring,
+              automated enforcement, or operational lock-in.
+            </p>
 
-        <ul>
-          <li>Verification over control</li>
-          <li>Evidence that stands up to review</li>
-          <li>Integration without intrusion</li>
-        </ul>
+            <p>Each product is intentionally narrow in scope and designed to integrate cleanly into existing environments.</p>
+
+            <ul class="bullets" aria-label="Principles">
+              <li>Verification over control</li>
+              <li>Evidence that stands up to review</li>
+              <li>Integration without intrusion</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
-      <!-- =====================
-           Products
-      ====================== -->
-      <section class="content">
-        <h2>Products</h2>
+      <!-- PRODUCTS -->
+      <section class="section quiet" aria-label="Products">
+        <div class="container grid">
+          <div>
+            <h2>Products</h2>
+          </div>
 
-        <div class="product-card">
-          <h3>UltraPro</h3>
-          <p class="product-tagline">
-            Network change verification &amp; audit-ready evidence
-          </p>
+          <div class="stack">
+            <article class="card" aria-label="UltraPro product card">
+              <div>
+                <h3>UltraPro</h3>
+                <p class="tagline">Network change verification &amp; audit-ready evidence</p>
+              </div>
 
-          <p>
-            UltraPro helps network teams verify the outcome of WAN and LAN
-            changes and generate structured, defensible evidence — without
-            monitoring or configuration control.
-          </p>
+              <p>
+                UltraPro helps network teams verify the outcome of WAN and LAN changes and generate structured,
+                defensible evidence—without monitoring or configuration control.
+              </p>
 
-          <a href={ULTRAPRO_URL} class="product-link">
-            View UltraPro →
-          </a>
+              <a class="link primary" href={ULTRAPRO_URL}>View UltraPro →</a>
+            </article>
+
+            <p class="note">Additional Veristio products will be introduced over time.</p>
+          </div>
         </div>
+      </section>
 
-        <p class="coming-soon">
-          Additional Veristio products will be introduced over time.
-        </p>
+      <!-- OUR APPROACH -->
+      <section class="section" aria-label="Our approach">
+        <div class="container grid">
+          <div>
+            <h2>Our Approach</h2>
+          </div>
+
+          <div>
+            <p>Veristio products are intentionally opinionated.</p>
+
+            <p class="approach-lines">
+              We focus on verification, not orchestration.<br />
+              Evidence, not enforcement.<br />
+              Clarity, not operational noise.
+            </p>
+
+            <p>
+              This restraint allows our tools to coexist with existing platforms while remaining defensible,
+              auditable, and trustworthy.
+            </p>
+          </div>
+        </div>
       </section>
     </main>
 
-    <!-- =====================
-         Footer
-    ====================== -->
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div class="footer-left">
-          <strong>Veristio</strong>
-          <p>Verification-first software.</p>
+    <footer role="contentinfo" class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <div class="footer-brand">Veristio, Inc.</div>
+          <div class="footer-copy">© 2025 Veristio. All rights reserved.</div>
         </div>
 
-        <div class="footer-links">
-          <a href="/terms">Terms of Service</a>
-          <a href="/privacy">Privacy Policy</a>
+        <div class="footer-links" aria-label="Footer links">
+          <div class="footer-col">
+            <div class="footer-title">Products</div>
+            <a href={ULTRAPRO_URL}>UltraPro</a>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-title">Legal &amp; Trust</div>
+            <a href="/terms">Terms of Service</a>
+            <a href="/privacy">Privacy Policy</a>
+          </div>
         </div>
       </div>
     </footer>
