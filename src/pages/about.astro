@@ -1,18 +1,36 @@
+---
+const title = "About Veristio";
+const description =
+  "Learn about Veristio's mission, principles, and verification-first philosophy.";
+---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>About €” Veristio</title>
-    <meta name="description" content="About Veristio." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="stylesheet" href="/styles/veristio.css" />
   </head>
+
   <body>
-    <main style="max-width:980px;margin:0 auto;padding:48px 24px;font-family:system-ui;">
-      <h1>About</h1>
-      <p style="color:#444;max-width:70ch;">
-        About Veristio content will be added here.
+    <main class="container section">
+      <h1>About Veristio</h1>
+
+      <p>
+        Veristio is a software company focused on building verification-first platforms
+        for enterprise and technical environments.
       </p>
-      <p style="margin-top:20px;"><a href="/" style="color:#1b5cff;text-decoration:none;">† Back to Veristio</a></p>
+
+      <p>
+        Our tools are designed to help organizations prove outcomes and generate
+        defensible evidence-without assuming operational control or continuous access.
+      </p>
+
+      <p>
+        We believe that clarity, restraint, and trust are essential when software is
+        used in audit, compliance, and high-stakes operational contexts.
+      </p>
     </main>
   </body>
 </html>

@@ -1,0 +1,50 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+
+const products = [
+  {
+    name: "UltraPro",
+    path: "/products/ultrapro",
+    summary: "Verification-first engineering and diagnostics platform.",
+  },
+  {
+    name: "UltraNOx",
+    path: "/products/ultranox",
+    summary: "Operational diagnostics and health tooling for enterprise networks.",
+  },
+  {
+    name: "UltraSignal",
+    path: "/products/ultrasignal",
+    summary: "SIEM focused on clarity, signal quality, and defensible evidence.",
+  },
+  {
+    name: "UltraControl",
+    path: "/products/ultracontrol",
+    summary: "ECSM focused on controlled state and auditability.",
+  },
+  {
+    name: "UltraAdvantage",
+    path: "/products/ultraadvantage",
+    summary: "Guidance and enablement to accelerate adoption.",
+  },
+];
+---
+<SiteLayout title="Products - Veristio">
+  <h1>Products</h1>
+
+  <p>
+    This page is the canonical Veristio product map. Each product has an owned home
+    under /products and should be linked from here.
+  </p>
+
+  <ul>
+    {products.map((p) => (
+      <li>
+        <a href={p.path}>{p.name}</a>
+        <div>{p.summary}</div>
+      </li>
+    ))}
+  </ul>
+
+  <p><a href="/">Home -&gt;</a></p>
+</SiteLayout>

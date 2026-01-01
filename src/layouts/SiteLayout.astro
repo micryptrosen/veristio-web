@@ -1,0 +1,30 @@
+---
+const { title = "Veristio", description = "" } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description ? <meta name="description" content={description} /> : null}
+    <link rel="stylesheet" href="/styles/veristio.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/">Veristio</a>
+        <nav aria-label="Primary navigation" class="nav">
+          <a href="/products">Products</a>
+          <a href="/about">About</a>
+          <a href="/legal">Legal &amp; Terms</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <slot />
+    </main>
+  </body>
+</html>

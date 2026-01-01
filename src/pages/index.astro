@@ -1,147 +1,67 @@
 ---
-/**
- * Veristio — Company Homepage (Locked)
- * Product links must be external or configurable.
- */
+import SiteLayout from "../layouts/SiteLayout.astro";
 
-const ULTRAPRO_URL =
-  import.meta.env.PUBLIC_ULTRAPRO_URL || "https://www.veristio.com/ultrapro";
-
-const title = "Veristio — Verification-first software platforms";
+const title = "Veristio - Verification-first software platforms";
 const description =
-  "Veristio develops focused tools that help organizations verify outcomes and produce defensible evidence—without unnecessary operational control.";
+  "Veristio builds verification-first software platforms that help teams produce defensible evidence without unnecessary operational control.";
 ---
+<SiteLayout title={title} description={description}>
+  <section class="hero">
+    <div class="kicker">Verification-first software platforms</div>
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <link rel="stylesheet" href="/styles/veristio.css" />
-  </head>
+    <h1>Software platforms built for verification, clarity, and trust.</h1>
 
-  <body>
-    <!-- Header -->
-    <header class="site-header" role="banner">
-      <div class="container header-inner">
-        <a class="brand" href="/">Veristio</a>
+    <p class="lead">
+      Veristio develops focused tools that help organizations verify outcomes and
+      produce defensible evidence - without unnecessary operational control.
+    </p>
 
-        <nav aria-label="Primary navigation" class="nav">
-          <a href={ULTRAPRO_URL} target="_blank" rel="noopener">Products</a>
-          <a href="/about">About</a>
-          <a href="/company">Legal &amp; Trust</a>
-        </nav>
-      </div>
-    </header>
+    <div class="actions">
+      <a href="/products">View Products -&gt;</a>
+      <a href="/about">Learn more -&gt;</a>
+    </div>
+  </section>
 
-    <main class="container">
-      <!-- Hero -->
-      <section class="hero">
-        <div class="kicker">Verification-first software platforms</div>
+  <section class="section">
+    <h2>What Veristio Builds</h2>
 
-        <h1>Software platforms built for verification, clarity, and trust.</h1>
+    <p>
+      Veristio products are designed for teams that must prove what happened and why it is true.
+      We prioritize clear evidence, repeatable verification, and operator trust.
+    </p>
 
-        <p class="lead">
-          Veristio develops focused tools that help organizations verify outcomes and produce
-          defensible evidence—without unnecessary operational control.
-        </p>
+    <ul class="bullets">
+      <li><strong>Verification over control:</strong> confirm outcomes without enforcing configuration.</li>
+      <li><strong>Evidence you can defend:</strong> outputs designed to survive review and audit.</li>
+      <li><strong>Integration without intrusion:</strong> work alongside existing tools and processes.</li>
+    </ul>
+  </section>
 
-        <div class="actions">
-          <a class="link-primary" href={ULTRAPRO_URL} target="_blank" rel="noopener">
-            View UltraPro →
-          </a>
-          <a class="link-secondary" href="/about">Learn more about Veristio →</a>
-        </div>
-      </section>
+  <section class="section">
+    <h2>Product Portfolio</h2>
 
-      <!-- What We Build -->
-      <section class="section">
-        <div class="section-title">What We Build</div>
+    <p>
+      Each product has a dedicated home under the Veristio map. Start at the Products index or jump directly.
+    </p>
 
-        <p>
-          Veristio builds verification-first software platforms.
-        </p>
-        <p>
-          Our products are designed to generate clear, defensible evidence—without persistent
-          monitoring, automated enforcement, or operational lock-in.
-        </p>
-        <p>
-          Each product is intentionally narrow in scope and designed to integrate cleanly into
-          existing environments.
-        </p>
+    <ul class="bullets">
+      <li><a href="/products/ultrapro">UltraPro</a> - Verification-first engineering and diagnostics platform.</li>
+      <li><a href="/products/ultranox">UltraNOx</a> - Operational diagnostics and health tooling for enterprise networks.</li>
+      <li><a href="/products/ultrasignal">UltraSignal</a> - SIEM focused on clarity, signal quality, and defensible evidence.</li>
+      <li><a href="/products/ultracontrol">UltraControl</a> - ECSM focused on controlled state and auditability.</li>
+      <li><a href="/products/ultraadvantage">UltraAdvantage</a> - Guidance and enablement to accelerate adoption.</li>
+    </ul>
 
-        <ul class="bullets">
-          <li>Verification over control</li>
-          <li>Evidence that stands up to review</li>
-          <li>Integration without intrusion</li>
-        </ul>
-      </section>
+    <p><a href="/products">View all products -&gt;</a></p>
+  </section>
 
-      <!-- Products -->
-      <section class="section">
-        <div class="section-title">Products</div>
-
-        <div class="product-grid">
-          <article class="card">
-            <div class="card-title">UltraPro</div>
-            <div class="card-kicker">Network change verification &amp; audit-ready evidence</div>
-
-            <p class="card-body">
-              UltraPro helps network teams verify the outcome of WAN and LAN changes and generate
-              structured, defensible evidence—without monitoring or configuration control.
-            </p>
-
-            <a class="card-link" href={ULTRAPRO_URL} target="_blank" rel="noopener">
-              View UltraPro →
-            </a>
-          </article>
-        </div>
-
-        <div class="note">Additional Veristio products will be introduced over time.</div>
-      </section>
-
-      <!-- Our Approach -->
-      <section class="section">
-        <div class="section-title">Our Approach</div>
-
-        <p>Veristio products are intentionally opinionated.</p>
-
-        <p>
-          We focus on verification, not orchestration.<br />
-          Evidence, not enforcement.<br />
-          Clarity, not operational noise.
-        </p>
-
-        <p>
-          This restraint allows our tools to coexist with existing platforms while remaining
-          defensible, auditable, and trustworthy.
-        </p>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="site-footer" role="contentinfo">
-      <div class="container footer-inner">
-        <div class="footer-brand">
-          <div class="footer-name">Veristio, Inc.</div>
-          <div class="footer-copy">© 2025 Veristio. All rights reserved.</div>
-        </div>
-
-        <div class="footer-cols">
-          <div class="footer-col">
-            <div class="footer-title">Products</div>
-            <a href={ULTRAPRO_URL} target="_blank" rel="noopener">UltraPro</a>
-          </div>
-
-          <div class="footer-col">
-            <div class="footer-title">Legal</div>
-            <a href="/terms">Terms of Service</a>
-            <a href="/privacy">Privacy Policy</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </body>
-</html>
+  <section class="section">
+    <h2>Site Map</h2>
+    <ul class="bullets">
+      <li><a href="/products">Products</a> - Canonical product index and owned homes.</li>
+      <li><a href="/about">About</a> - Mission and program direction.</li>
+      <li><a href="/company">Company</a> - Reserved for future corporate content.</li>
+      <li><a href="/legal">Legal &amp; Terms</a> - Canonical legal hub.</li>
+    </ul>
+  </section>
+</SiteLayout>
