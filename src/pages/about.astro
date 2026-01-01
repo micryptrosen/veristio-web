@@ -1,36 +1,28 @@
 ---
+import SiteLayout from "../layouts/SiteLayout.astro";
+
 const title = "About Veristio";
 const description =
-  "Learn about Veristio's mission, principles, and verification-first philosophy.";
+  "Veristio builds verification-first software platforms for enterprise and technical environments.";
 ---
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <link rel="stylesheet" href="/styles/veristio.css" />
-  </head>
+<SiteLayout title={title} description={description}>
+  <h1>About Veristio</h1>
 
-  <body>
-    <main class="container section">
-      <h1>About Veristio</h1>
+  <p>
+    Veristio is a software company focused on building verification-first
+    platforms for enterprise and technical environments.
+  </p>
 
-      <p>
-        Veristio is a software company focused on building verification-first platforms
-        for enterprise and technical environments.
-      </p>
+  <p>
+    Our tools are designed to help organizations prove outcomes and generate
+    defensible evidence - without assuming operational control or continuous
+    access.
+  </p>
 
-      <p>
-        Our tools are designed to help organizations prove outcomes and generate
-        defensible evidence-without assuming operational control or continuous access.
-      </p>
+  <p>
+    We believe that clarity, restraint, and trust are essential when software
+    is used in audit, compliance, and high-stakes operational contexts.
+  </p>
 
-      <p>
-        We believe that clarity, restraint, and trust are essential when software is
-        used in audit, compliance, and high-stakes operational contexts.
-      </p>
-    </main>
-  </body>
-</html>
+  <p><a href="/">Home -&gt;</a></p>
+</SiteLayout>
