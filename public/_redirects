@@ -1,0 +1,8 @@
+# Canonical product routes
+/ultranetops  /products/ultranox  301
+/UltraNetOps  /products/ultranox  301
+
+# Normalize short routes to canonical homes
+/ultrapro     /products/ultrapro      301
+/siem         /products/ultrasignal   301
+/ecsm         /products/ultracontrol  301
