@@ -1,5 +1,6 @@
 ---
 import SiteLayout from "../../layouts/SiteLayout.astro";
+import ProductFooterNav from "../../components/ProductFooterNav.astro";
 
 const products = [
   {
@@ -46,5 +47,5 @@ const products = [
     ))}
   </ul>
 
-  <p><a href="/">Home -&gt;</a></p>
+  <ProductFooterNav showProducts={false} />
 </SiteLayout>

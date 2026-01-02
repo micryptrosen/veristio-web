@@ -1,18 +1,78 @@
 ---
 import SiteLayout from "../../../layouts/SiteLayout.astro";
+import ProductFooterNav from "../../../components/ProductFooterNav.astro";
 ---
 <SiteLayout title="UltraPro - Veristio">
   <h1>UltraPro</h1>
 
   <p>
     UltraPro is a verification-first engineering and diagnostics platform
-    focused on infrastructure validation and defensible evidence capture.
+    designed to produce defensible conclusions from real operational evidence.
+    It exists to help teams prove outcomes, not enforce intent.
+  </p>
+
+  <h2>What UltraPro Does</h2>
+
+  <p>
+    UltraPro brings together diagnostic data, security events, and controlled
+    state observations into structured analysis and reporting workflows.
+    It is designed for engineers, operators, and reviewers who require
+    confidence in how conclusions are reached.
+  </p>
+
+  <ul>
+    <li>Evidence aggregation from diagnostics, events, and state inspection</li>
+    <li>Structured analysis workflows for investigation and validation</li>
+    <li>Report generation suitable for review, audit, and handoff</li>
+    <li>Clear traceability from observation to conclusion</li>
+  </ul>
+
+  <h2>Design Philosophy</h2>
+
+  <p>
+    UltraPro is built around the principle that trust comes from transparency.
+    It avoids automated decisions that cannot be explained and conclusions
+    that cannot be defended with evidence.
   </p>
 
   <p>
-    It is designed to help teams prove outcomes without enforcing configuration
-    or maintaining persistent monitoring.
+    The platform does not enforce configuration, remediate systems, or maintain
+    persistent monitoring. Its role is to synthesize validated inputs into
+    outcomes that can withstand scrutiny.
   </p>
 
-  <p><a href="/products">Back to Products -&gt;</a></p>
+  <h2>Where It Fits</h2>
+
+  <p>
+    UltraPro serves as the analytical and reporting capstone within the
+    Veristio suite, consuming validated inputs from complementary products.
+  </p>
+
+  <ul>
+    <li>
+      Incorporates operational diagnostics from
+      <a href="/products/ultranox">UltraNOx</a> to ground analysis in real
+      system behavior.
+    </li>
+    <li>
+      Uses event timelines and evidence from
+      <a href="/products/ultrasignal">UltraSignal</a> to support security
+      investigation and review.
+    </li>
+    <li>
+      Leverages controlled-state validation from
+      <a href="/products/ultracontrol">UltraControl</a> to assess governance
+      and compliance posture.
+    </li>
+  </ul>
+
+  <h2>Roadmap Direction</h2>
+
+  <p>
+    Future development is focused on improving analytical tooling, expanding
+    reporting formats, and strengthening evidence traceability across complex
+    environments, while preserving a verification-first operating model.
+  </p>
+
+  <ProductFooterNav />
 </SiteLayout>

@@ -1,0 +1,14 @@
+---
+const {
+  showProducts = true,
+  showCompany = true,
+  productsHref = "/products",
+  companyHref = "/company",
+} = Astro.props;
+---
+
+<p>
+  {showProducts && <a href={productsHref}>Back to Products -></a>}
+  {(showProducts && showCompany) && " | "}
+  {showCompany && <a href={companyHref}>Company -></a>}
+</p>

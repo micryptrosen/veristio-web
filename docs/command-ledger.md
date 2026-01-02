@@ -1,4 +1,18 @@
 # Veristio Command Ledger
+Baseline checkpoint (Sealed):
+
+Cloudflare Pages project: veristio-web (main) deploying successfully
+
+Canonical map live: /products/*
+
+_redirects active (canonicalization)
+
+Legacy holds archived: src/pages/_archive/*
+
+Routes snapshot present: docs/routes-snapshot.txt
+
+Layout enforced: SiteLayout.astro used by all live pages including 404
+
 Status: Active
 Program: VERISTIO
 

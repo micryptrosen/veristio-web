@@ -1,9 +1,68 @@
 ---
 import SiteLayout from "../../../layouts/SiteLayout.astro";
+import ProductFooterNav from "../../../components/ProductFooterNav.astro";
 ---
 <SiteLayout title="UltraNOx - Veristio">
   <h1>UltraNOx</h1>
-  <p>Official product page for UltraNOx under Veristio.</p>
-  <p><a href="/products">Back to Products -&gt;</a></p>
-</SiteLayout>
 
+  <p>
+    UltraNOx is an operational diagnostics and health analysis platform designed
+    to surface real system behavior without intrusive enforcement or continuous
+    monitoring.
+  </p>
+
+  <h2>What UltraNOx Does</h2>
+
+  <p>
+    UltraNOx focuses on identifying conditions that affect reliability,
+    performance, and operational confidence across networked systems.
+    It emphasizes observation, validation, and evidence over control.
+  </p>
+
+  <ul>
+    <li>System and network health analysis</li>
+    <li>Operational state inspection and validation</li>
+    <li>Diagnostics focused on real-world behavior, not configuration intent</li>
+    <li>Evidence-oriented output suitable for review and handoff</li>
+  </ul>
+
+  <h2>Design Philosophy</h2>
+
+  <p>
+    UltraNOx is built around a verification-first mindset. It does not attempt
+    to enforce policy, maintain persistent surveillance, or replace existing
+    management systems. Instead, it provides clarity where uncertainty exists.
+  </p>
+
+  <h2>Where It Fits</h2>
+
+  <p>
+    UltraNOx complements other Veristio products by providing operational insight
+    that can inform deeper investigation or validation workflows.
+  </p>
+
+  <ul>
+    <li>
+      Works alongside <a href="/products/ultrasignal">UltraSignal</a> to
+      contextualize events with system health.
+    </li>
+    <li>
+      Feeds validated observations into <a href="/products/ultrapro">UltraPro</a>
+      for defensible diagnostics and reporting.
+    </li>
+    <li>
+      Can highlight conditions relevant to controlled environments monitored
+      by <a href="/products/ultracontrol">UltraControl</a>.
+    </li>
+  </ul>
+
+  <h2>Roadmap Direction</h2>
+
+  <p>
+    Future development is focused on expanding diagnostic coverage, improving
+    evidence fidelity, and strengthening integration points across the Veristio
+    suite, while maintaining a non-intrusive operational posture.
+  </p>
+
+  <ProductFooterNav />
+</SiteLayout>

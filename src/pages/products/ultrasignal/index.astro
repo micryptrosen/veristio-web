@@ -1,18 +1,70 @@
 ---
 import SiteLayout from "../../../layouts/SiteLayout.astro";
+import ProductFooterNav from "../../../components/ProductFooterNav.astro";
 ---
 <SiteLayout title="UltraSignal - Veristio">
   <h1>UltraSignal</h1>
 
   <p>
-    UltraSignal is a security information and event management platform
-    designed for clarity, operator trust, and defensible evidence.
+    UltraSignal is a security information and event management platform built
+    to prioritize signal quality, operator trust, and defensible evidence
+    over alert volume and opaque automation.
   </p>
+
+  <h2>What UltraSignal Does</h2>
 
   <p>
-    It emphasizes signal quality over volume and supports audit-ready
-    investigation workflows.
+    UltraSignal collects, correlates, and presents security-relevant events
+    in a way that supports investigation, review, and accountability.
+    It is designed for environments where clarity and auditability matter
+    more than raw ingestion scale.
   </p>
 
-  <p><a href="/products">Back to Products -&gt;</a></p>
+  <ul>
+    <li>Event collection and normalization across diverse sources</li>
+    <li>Correlation focused on meaningful security signals</li>
+    <li>Evidence retention suitable for audit and review</li>
+    <li>Operator-driven investigation workflows</li>
+  </ul>
+
+  <h2>Design Philosophy</h2>
+
+  <p>
+    UltraSignal favors transparency over automation opacity. It avoids
+    excessive alerting, unexplained scoring, and black-box decision paths.
+    Analysts retain visibility into why events matter and how conclusions
+    are reached.
+  </p>
+
+  <h2>Where It Fits</h2>
+
+  <p>
+    UltraSignal serves as the event and evidence layer within the Veristio
+    suite, integrating naturally with diagnostic and validation workflows.
+  </p>
+
+  <ul>
+    <li>
+      Consumes health and diagnostic context from
+      <a href="/products/ultranox">UltraNOx</a> to enrich investigations.
+    </li>
+    <li>
+      Provides defensible evidence and timelines for
+      <a href="/products/ultrapro">UltraPro</a> analysis and reporting.
+    </li>
+    <li>
+      Supports controlled and regulated environments alongside
+      <a href="/products/ultracontrol">UltraControl</a>.
+    </li>
+  </ul>
+
+  <h2>Roadmap Direction</h2>
+
+  <p>
+    Ongoing development is focused on improving correlation fidelity,
+    evidence handling, and integration depth, while maintaining analyst
+    clarity and operational trust.
+  </p>
+
+  <ProductFooterNav />
 </SiteLayout>

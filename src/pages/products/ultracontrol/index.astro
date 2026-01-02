@@ -1,20 +1,76 @@
 ---
 import SiteLayout from "../../../layouts/SiteLayout.astro";
+import ProductFooterNav from "../../../components/ProductFooterNav.astro";
 ---
 <SiteLayout title="UltraControl - Veristio">
   <h1>UltraControl</h1>
 
   <p>
-    UltraControl provides endpoint and configuration state monitoring for
-    controlled, auditable environments.
+    UltraControl is an endpoint and configuration state monitoring platform
+    designed for controlled, auditable environments where clarity and
+    governance are critical.
+  </p>
+
+  <h2>What UltraControl Does</h2>
+
+  <p>
+    UltraControl provides visibility into system configuration and state
+    without enforcing changes or introducing continuous control loops.
+    It is intended to support oversight, validation, and review rather than
+    automated remediation.
+  </p>
+
+  <ul>
+    <li>Configuration and state inspection across managed systems</li>
+    <li>Baseline comparison and drift identification</li>
+    <li>Evidence generation for governance and compliance review</li>
+    <li>Clear separation between observation and enforcement</li>
+  </ul>
+
+  <h2>Design Philosophy</h2>
+
+  <p>
+    UltraControl is built for environments where authority, accountability,
+    and auditability matter more than speed of change. It avoids silent
+    correction, opaque policy engines, and uncontrolled automation.
   </p>
 
   <p>
-    It is designed to support governance, compliance validation, and
-    configuration clarity without intrusive enforcement.
+    By remaining observational and evidence-focused, UltraControl supports
+    regulated and high-trust environments without becoming a source of risk.
   </p>
 
-  <p><a href="/products">Back to Products -&gt;</a></p>
+  <h2>Where It Fits</h2>
+
+  <p>
+    UltraControl serves as the governance and state-validation layer within
+    the Veristio suite, complementing operational diagnostics and security
+    investigation workflows.
+  </p>
+
+  <ul>
+    <li>
+      Uses diagnostic context from <a href="/products/ultranox">UltraNOx</a>
+      to highlight conditions that affect compliance and reliability.
+    </li>
+    <li>
+      Provides controlled-state evidence that can be reviewed alongside
+      events in <a href="/products/ultrasignal">UltraSignal</a>.
+    </li>
+    <li>
+      Feeds validated configuration data into
+      <a href="/products/ultrapro">UltraPro</a> for defensible reporting and
+      analysis.
+    </li>
+  </ul>
+
+  <h2>Roadmap Direction</h2>
+
+  <p>
+    Future development is focused on expanding coverage, improving baseline
+    comparison accuracy, and strengthening evidence traceability, while
+    preserving a strict non-intrusive operating model.
+  </p>
+
+  <ProductFooterNav />
 </SiteLayout>
-
-
