@@ -1,5 +1,80 @@
-<!--
-  BaseLayout.astro
-  Intentionally empty.
-  Content added only when finalized.
--->
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+/*
+  Veristio BaseLayout - single identity, no style toggle.
+
+  IMPORTANT:
+  Do NOT use <link href="/src/..."> for styles.
+  Styles must be imported from src/ so Astro bundles them for production.
+*/
+
+import "../styles/ultrapro-base.css";
+import "../styles/ultrapro-layout.css";
+import "../styles/ultrapro-components.css";
+import "../styles/ultrapro-pages.css";
+import "../styles/veristio-adapt.css";
+
+const {
+  title = "Veristio",
+  description = "Veristio - verification-first systems.",
+  page = ""
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#073763" />
+    <link rel="icon" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+
+  <body data-page={page}>
+    <Header currentPage={page} />
+
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
+
+    <script is:inline>
+      (function () {
+        var els = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+        if (!els.length) return;
+
+        function turnOn(el) {
+          el.classList.add("on");
+          el.classList.add("show");
+        }
+
+        if (!("IntersectionObserver" in window)) {
+          els.forEach(turnOn);
+          return;
+        }
+
+        var io = new IntersectionObserver(function (entries) {
+          for (var i = 0; i < entries.length; i++) {
+            var e = entries[i];
+            if (e.isIntersecting) {
+              turnOn(e.target);
+              io.unobserve(e.target);
+            }
+          }
+        }, { threshold: 0.12 });
+
+        els.forEach(function (el) { io.observe(el); });
+      })();
+
+      (function () {
+        var y = document.querySelector("#year");
+        if (y) y.textContent = String(new Date().getFullYear());
+      })();
+    </script>
+  </body>
+</html>

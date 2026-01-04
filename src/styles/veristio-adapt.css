@@ -1,0 +1,96 @@
+/* Veristio adaptation layer (loaded after UltraPro CSS)
+   Purpose: remove inline styles + keep structure deterministic.
+*/
+
+.site-header .header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:64px;
+  gap:18px;
+}
+
+.site-header .brand{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+}
+
+.site-header .nav{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.site-header .header-actions{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+/* Small-screen behavior (safe defaults) */
+@media (max-width: 900px){
+  .site-header .nav{ display:none; }
+}
+
+/* Utility helpers to remove inline styles */
+.stack-16{ display:grid; gap:16px; }
+.stack-12{ display:grid; gap:12px; }
+.card-stack-10{ display:grid; gap:10px; }
+.mb-18{ margin-bottom:18px; }
+.fit{ width:fit-content; }
+
+
+/* Home page helpers (remove inline styles) */
+.stack-16{ display:grid; gap:16px; }
+.stack-12{ display:grid; gap:12px; }
+.pad-14{ padding:14px; }
+.mt-14{ margin-top:14px; }
+.mt-10{ margin-top:10px; }
+
+/* Footer layout (UltraPro CSS does not style Veristio footer classes) */
+.site-footer{
+  padding:48px 0;
+}
+
+.footer-grid{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:48px;
+}
+
+.footer-brand{
+  max-width:460px;
+}
+
+.footer-cols{
+  display:flex;
+  gap:56px;
+  flex-wrap:wrap;
+}
+
+.footer-col{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-width:160px;
+}
+
+.footer-link{
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+  color:rgba(16,24,40,.75);
+}
+
+.footer-link:hover{
+  color:var(--text);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+@media (max-width: 900px){
+  .footer-grid{ flex-direction:column; }
+  .footer-cols{ gap:28px; }
+}
