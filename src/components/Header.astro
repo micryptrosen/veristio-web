@@ -1,13 +1,33 @@
 ---
-const { currentPage = "" } = Astro.props;
+/*
+  Veristio ? Global Header
+  UltraPro CTA removed
+  No product favoritism
+*/
 ---
 
 <header class="site-header">
-  <div class="container">
-    <nav class="nav">
-      <a href="/overview" class={currentPage === "overview" ? "active" : ""}>Overview</a>
-      <a href="/company" class={currentPage === "company" ? "active" : ""}>Company</a>
-      <a href="/legal" class={currentPage === "legal" ? "active" : ""}>Legal &amp; Terms</a>
+  <div class="container header-inner">
+    <!-- Brand -->
+    <a class="pill brand" href="/" aria-label="Veristio Home">
+      <span style="font-weight:900; color:var(--ink);">Veristio</span>
+      <span class="small">Verification-first systems</span>
+    </a>
+
+    <!-- Primary Navigation -->
+    <nav class="nav" aria-label="Primary">
+      <a class="pill" href="/overview">Overview</a>
+      <a class="pill" href="/products">Products</a>
+      <a class="pill" href="/company">Company</a>
+      <a class="pill" href="/legal">Legal &amp; Terms</a>
     </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <a class="btn primary" href="/products">Explore</a>
+    </div>
   </div>
 </header>
+
+
+
