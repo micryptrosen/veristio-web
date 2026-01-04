@@ -1,67 +1,132 @@
 ---
-import SiteLayout from "../layouts/SiteLayout.astro";
-
-const title = "Veristio - Verification-first software platforms";
-const description =
-  "Veristio builds verification-first software platforms that help teams produce defensible evidence without unnecessary operational control.";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SuiteTerminal from "../components/SuiteTerminal.astro";
 ---
-<SiteLayout title={title} description={description}>
+
+<BaseLayout
+  title="Veristio - Verification-first systems"
+  description="Verification-first software focused on clarity, defensibility, and operator trust."
+  page="home"
+>
+  <!-- HERO: cover page + suite preview (no products card in hero) -->
   <section class="hero">
-    <div class="kicker">Verification-first software platforms</div>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="reveal stack-16">
+          <span class="kicker"><span class="dot"></span> Verification-first systems</span>
+          <h1>Clarity you can defend.</h1>
+          <p>
+            Veristio builds software that favors evidence, transparency, and operational truth
+            over opaque automation and noisy outputs.
+          </p>
 
-    <h1>Software platforms built for verification, clarity, and trust.</h1>
+          <div class="hero-actions">
+            <a class="btn primary" href="/products">Explore Products</a>
+            <a class="btn" href="/company">Company</a>
+          </div>
 
-    <p class="lead">
-      Veristio develops focused tools that help organizations verify outcomes and
-      produce defensible evidence - without unnecessary operational control.
-    </p>
+          <div class="bullets">
+            <div class="bullet"><span class="check"></span> Evidence-led workflows</div>
+            <div class="bullet"><span class="check"></span> Operator trust and auditability</div>
+            <div class="bullet"><span class="check"></span> Designed to work alongside your stack</div>
+          </div>
+        </div>
 
-    <div class="actions">
-      <a href="/products">View Products -&gt;</a>
-      <a href="/about">Learn more -&gt;</a>
+        <!-- Suite terminal preview (animated) -->
+        <SuiteTerminal />
+      </div>
     </div>
   </section>
 
-  <section class="section">
-    <h2>What Veristio Builds</h2>
+  <!-- PRODUCT SHORTCUTS: belongs below hero (cover-page intent) -->
+  <section class="section tight">
+    <div class="container">
+      <div class="reveal stack-12 mb-18">
+        <h2>Products</h2>
+        <p class="muted">Jump straight into the suite.</p>
+      </div>
 
-    <p>
-      Veristio products are designed for teams that must prove what happened and why it is true.
-      We prioritize clear evidence, repeatable verification, and operator trust.
-    </p>
+      <div class="grid two reveal">
+        <a class="card pad-14" href="/products/ultranox">
+          <h3>UltraNOx</h3>
+          <p class="muted">Operational diagnostics and health analysis.</p>
+        </a>
+        <a class="card pad-14" href="/products/ultrasignal">
+          <h3>UltraSignal</h3>
+          <p class="muted">Signal-focused SIEM and evidence timelines.</p>
+        </a>
+        <a class="card pad-14" href="/products/ultracontrol">
+          <h3>UltraControl</h3>
+          <p class="muted">Controlled-state monitoring and governance evidence.</p>
+        </a>
+        <a class="card pad-14" href="/products/ultrapro">
+          <h3>UltraPro</h3>
+          <p class="muted">Verification-first analysis and defensible reporting.</p>
+        </a>
+      </div>
 
-    <ul class="bullets">
-      <li><strong>Verification over control:</strong> confirm outcomes without enforcing configuration.</li>
-      <li><strong>Evidence you can defend:</strong> outputs designed to survive review and audit.</li>
-      <li><strong>Integration without intrusion:</strong> work alongside existing tools and processes.</li>
-    </ul>
+      <div class="mt-14 reveal">
+        <a class="btn ghost" href="/products">View product map</a>
+      </div>
+    </div>
   </section>
 
-  <section class="section">
-    <h2>Product Portfolio</h2>
+  <!-- SUITE: belongs ABOVE the 4 value cards -->
+  <section class="section tight">
+    <div class="container">
+      <div class="grid two reveal">
+        <div class="card">
+          <div class="kicker"><span class="dot"></span> Suite</div>
+          <h3>Suite at a glance</h3>
+          <p>
+            Diagnostics, events, governance, and reporting - tied together cleanly.
+          </p>
+        </div>
 
-    <p>
-      Each product has a dedicated home under the Veristio map. Start at the Products index or jump directly.
-    </p>
+        <div class="card">
+          <h3>Where to begin</h3>
+          <p class="muted">If you want a simple path:</p>
+          <div class="bullets mt-10">
+            <div class="bullet"><span class="check"></span> UltraNOx for health and diagnostics</div>
+            <div class="bullet"><span class="check"></span> UltraSignal for event timelines</div>
+            <div class="bullet"><span class="check"></span> UltraControl for governed state</div>
+            <div class="bullet"><span class="check"></span> UltraPro to synthesize and report</div>
+          </div>
+        </div>
+      </div>
 
-    <ul class="bullets">
-      <li><a href="/products/ultrapro">UltraPro</a> - Verification-first engineering and diagnostics platform.</li>
-      <li><a href="/products/ultranox">UltraNOx</a> - Operational diagnostics and health tooling for enterprise networks.</li>
-      <li><a href="/products/ultrasignal">UltraSignal</a> - SIEM focused on clarity, signal quality, and defensible evidence.</li>
-      <li><a href="/products/ultracontrol">UltraControl</a> - ECSM focused on controlled state and auditability.</li>
-      <li><a href="/products/ultraadvantage">UltraAdvantage</a> - Guidance and enablement to accelerate adoption.</li>
-    </ul>
-
-    <p><a href="/products">View all products -&gt;</a></p>
+      <div class="grid four reveal mt-14">
+        <div class="card">
+          <h3>Verification-first</h3>
+          <p>Prove outcomes with traceable inputs and transparent conclusions.</p>
+        </div>
+        <div class="card">
+          <h3>Operator trust</h3>
+          <p>Reduce noise and keep humans in control of judgment.</p>
+        </div>
+        <div class="card">
+          <h3>Audit-ready</h3>
+          <p>Evidence that supports review, handoff, and compliance workflows.</p>
+        </div>
+        <div class="card">
+          <h3>Suite coherence</h3>
+          <p>Each product stands alone, but integrates cleanly across the stack.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="section">
-    <h2>Site Map</h2>
-    <ul class="bullets">
-      <li><a href="/products">Products</a> - Canonical product index and owned homes.</li>
-      <li><a href="/about">About</a> - Mission and program direction.</li>
-      <li><a href="/company">Company</a> - Reserved for future corporate content.</li>
-      <li><a href="/legal">Legal &amp; Terms</a> - Canonical legal hub.</li>
-    </ul>
+  <!-- PRODUCT MAP CTA (kept simple, no duplicated "Where to begin") -->
+  <section class="section tight">
+    <div class="container">
+      <div class="card reveal stack-12">
+        <h2>Explore the product map</h2>
+        <p class="muted">Start with the suite overview, then go product-by-product.</p>
+        <div class="mt-14">
+          <a class="btn primary" href="/products">Products</a>
+        </div>
+      </div>
+    </div>
   </section>
-</SiteLayout>
+</BaseLayout>
+'@ | Set-Content -LiteralPath "C:\Dev\HCJ\Veristio_Web\src\pages\index.astro" -Encoding utf8

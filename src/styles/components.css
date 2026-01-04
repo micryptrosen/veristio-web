@@ -84,3 +84,14 @@
   .footer-grid{ grid-template-columns: 1fr; }
   .footer-cols{ grid-template-columns: 1fr; }
 }
+/* Hotfix: restore UltraPro card surfaces + contrast */
+.card{
+  background: var(--card) !important;
+  border: 1px solid var(--line) !important;
+  color: var(--ink) !important;
+}
+
+.card p,
+.card .muted{
+  color: var(--muted) !important;
+}

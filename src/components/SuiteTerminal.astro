@@ -1,0 +1,156 @@
+<!-- SuiteTerminal.astro (Veristio) -->
+<!-- Purpose: Hero-right "terminal preview" for the Ultra Suite (ASCII-only). -->
+
+<div class="hero-card reveal" aria-label="Ultra suite console preview">
+  <div class="terminal">
+    <div class="terminal-top">
+      <div class="dots" aria-hidden="true">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      </div>
+      <div class="terminal-title">ultra suite / evidence-flow <span class="badge ok">LIVE</span></div>
+    </div>
+
+    <div class="terminal-body">
+      <div class="code" id="suiteTypeArea"></div>
+
+      <div class="sparkline" aria-hidden="true">
+        <svg viewBox="0 0 1000 200" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="suite_g" x1="0" x2="1">
+              <stop offset="0" stop-color="rgba(11,92,171,.95)" />
+              <stop offset="1" stop-color="rgba(25,179,230,.95)" />
+            </linearGradient>
+            <linearGradient id="suite_fill" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0" stop-color="rgba(25,179,230,.22)" />
+              <stop offset="1" stop-color="rgba(11,92,171,.04)" />
+            </linearGradient>
+          </defs>
+
+          <path
+            d="M0,150 C90,120 120,80 190,105 C260,130 300,60 360,70 C420,80 470,120 520,95 C570,70 610,40 670,60 C730,80 770,120 820,105 C870,90 920,40 1000,60 L1000,200 L0,200 Z"
+            fill="url(#suite_fill)"
+          ></path>
+          <path
+            d="M0,150 C90,120 120,80 190,105 C260,130 300,60 360,70 C420,80 470,120 520,95 C570,70 610,40 670,60 C730,80 770,120 820,105 C870,90 920,40 1000,60"
+            fill="none"
+            stroke="url(#suite_g)"
+            stroke-width="5"
+            stroke-linecap="round"
+          ></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    const typeArea = document.querySelector("#suiteTypeArea");
+    if (!typeArea) return;
+
+    const lines = [
+      { t: "$ ultranox scan --scope edge,core --grade output", c: "" },
+      { t: "[OK] Health:    97% (nodes ok: 142/146)", c: "ok" },
+      { t: "[WARN] Watch:  4 devices (temp, fan, link errors)", c: "warn" },
+      { t: "", c: "" },
+      { t: "$ ultrasignal ingest --sources syslog,edr,cloud --window 15m", c: "" },
+      { t: "[OK] Events:   12440 collected", c: "ok" },
+      { t: "[OK] Timeline: correlated (auth, vpn, dns, fw)", c: "ok" },
+      { t: "", c: "" },
+      { t: "$ ultracontrol verify --policy change-guardrails --ticket CHG-4812", c: "" },
+      { t: "[OK] Policy:   compliant (no drift)", c: "ok" },
+      { t: "", c: "" },
+      { t: "$ ultrapro report --format pdf --attach evidence", c: "" },
+      { t: "[OK] Report:   ultra_suite_case_4812.pdf", c: "ok" },
+    ];
+
+    // Prevent multiple instances (hot reload)
+    if (window.__suiteTypewriter && typeof window.__suiteTypewriter.stop === "function") {
+      window.__suiteTypewriter.stop();
+    }
+
+    let stopped = false;
+    let lineIndex = 0;
+    let charIndex = 0;
+    let delay = 24;
+    let pauseBetweenLines = 260;
+    let pauseAtEnd = 1200;
+    let timer = null;
+
+    function clearTimer() {
+      if (timer) { clearTimeout(timer); timer = null; }
+    }
+
+    function reset() {
+      typeArea.innerHTML = "";
+      lineIndex = 0;
+      charIndex = 0;
+    }
+
+    function addLineContainer(cls) {
+      const div = document.createElement("div");
+      div.className = cls ? ("line " + cls) : "line";
+      typeArea.appendChild(div);
+      return div;
+    }
+
+    function step() {
+      if (stopped) return;
+
+      // Pause when tab not visible (keeps it stable)
+      if (document.hidden) {
+        timer = setTimeout(step, 250);
+        return;
+      }
+
+      if (lineIndex >= lines.length) {
+        timer = setTimeout(function () {
+          if (stopped) return;
+          reset();
+          step();
+        }, pauseAtEnd);
+        return;
+      }
+
+      const line = lines[lineIndex];
+      const cls = line.c || "";
+      let current = typeArea.lastElementChild;
+
+      if (!current || !current.classList.contains("line") || current.getAttribute("data-idx") !== String(lineIndex)) {
+        current = addLineContainer(cls);
+        current.setAttribute("data-idx", String(lineIndex));
+      }
+
+      const text = line.t || "";
+      if (charIndex < text.length) {
+        current.textContent = text.slice(0, charIndex + 1);
+        charIndex++;
+        timer = setTimeout(step, delay);
+      } else {
+        // Line complete
+        charIndex = 0;
+        lineIndex++;
+        // Keep the bottom visible
+        typeArea.scrollTop = typeArea.scrollHeight;
+        timer = setTimeout(step, pauseBetweenLines);
+      }
+    }
+
+    function start() {
+      stopped = false;
+      reset();
+      clearTimer();
+      step();
+    }
+
+    function stop() {
+      stopped = true;
+      clearTimer();
+    }
+
+    window.__suiteTypewriter = { start, stop };
+
+    // Start immediately
+    start();
+  })();
+</script>

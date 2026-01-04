@@ -1,45 +1,8 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "./BaseLayout.astro";
 
-const { title = "Veristio", description = "Verification-first systems." } = Astro.props;
+const { title = "Veristio", description = "Veristio - verification-first systems." } = Astro.props;
 ---
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content={description} />
-    <title>{title}</title>
-
-    <link rel="stylesheet" href="/src/styles/base.css" />
-    <link rel="stylesheet" href="/src/styles/layout.css" />
-    <link rel="stylesheet" href="/src/styles/components.css" />
-    <link rel="stylesheet" href="/src/styles/pages.css" />
-  </head>
-
-  <body>
-    <Header />
-    <main class="page">
-      <div class="container">
-        <slot />
-      </div>
-    </main>
-    <Footer />
-
-    <script>
-      (() => {
-        const els = document.querySelectorAll(".reveal");
-        if (!("IntersectionObserver" in window) || els.length === 0) return;
-
-        const io = new IntersectionObserver((entries) => {
-          for (const e of entries) {
-            if (e.isIntersecting) e.target.classList.add("on");
-          }
-        }, { threshold: 0.14 });
-
-        for (const el of els) io.observe(el);
-      })();
-    </script>
-  </body>
-</html>
+<BaseLayout title={title} description={description}>
+  <slot />
+</BaseLayout>

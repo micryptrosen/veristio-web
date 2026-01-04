@@ -1,51 +1,93 @@
 ---
-import SiteLayout from "../../layouts/SiteLayout.astro";
-import ProductFooterNav from "../../components/ProductFooterNav.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const products = [
   {
-    name: "UltraPro",
-    path: "/products/ultrapro",
-    summary: "Verification-first engineering and diagnostics platform.",
-  },
-  {
     name: "UltraNOx",
-    path: "/products/ultranox",
-    summary: "Operational diagnostics and health tooling for enterprise networks.",
+    href: "/products/ultranox",
+    tagline: "Operational diagnostics and health analysis."
   },
   {
     name: "UltraSignal",
-    path: "/products/ultrasignal",
-    summary: "SIEM focused on clarity, signal quality, and defensible evidence.",
+    href: "/products/ultrasignal",
+    tagline: "Signal-focused SIEM and evidence timelines."
   },
   {
     name: "UltraControl",
-    path: "/products/ultracontrol",
-    summary: "ECSM focused on controlled state and auditability.",
+    href: "/products/ultracontrol",
+    tagline: "Controlled-state monitoring and governance evidence."
+  },
+  {
+    name: "UltraPro",
+    href: "/products/ultrapro",
+    tagline: "Verification-first analysis and defensible reporting."
   },
   {
     name: "UltraAdvantage",
-    path: "/products/ultraadvantage",
-    summary: "Guidance and enablement to accelerate adoption.",
-  },
+    href: "/products/ultraadvantage",
+    tagline: "Assistive services layer for operators and teams."
+  }
 ];
 ---
-<SiteLayout title="Products - Veristio">
-  <h1>Products</h1>
+<BaseLayout
+  useUltraProStyles={true}
+  title="Products - Veristio"
+  description="Veristio product map - suite overview and product pages."
+  page="products"
+>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="reveal stack-16">
+          <span class="kicker"><span class="dot"></span> Product Map</span>
+          <h1>Veristio Products</h1>
+          <p>
+            Each product is designed to stand alone while integrating into a coherent,
+            verification-first suite.
+          </p>
+          <div class="hero-cta">
+            <a class="btn primary" href="/company">Company</a>
+            <a class="btn" href="/">Home</a>
+          </div>
+        </div>
 
-  <p>
-    This page is the canonical Veristio product map. Each product has an owned home
-    under /products and should be linked from here.
-  </p>
+        <div class="reveal">
+          <div class="card">
+            <h3>Suite intent</h3>
+            <p>
+              Diagnostics, events, governance, and reporting - connected by evidence and clarity.
+            </p>
+            <div class="divider"></div>
+            <div class="bullets">
+              <div class="bullet"><span class="check"></span> Reduce uncertainty</div>
+              <div class="bullet"><span class="check"></span> Improve traceability</div>
+              <div class="bullet"><span class="check"></span> Support review and audit</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <ul>
-    {products.map((p) => (
-      <li>
-        <a href={p.path}>{p.name}</a>
-        <div>{p.summary}</div>
-      </li>
-    ))}
-  </ul>
+  <section class="section tight">
+    <div class="container">
+      <div class="reveal stack-12 mb-18">
+        <h2>Products</h2>
+        <p>Select a product to open its dedicated page.</p>
+      </div>
 
-  <ProductFooterNav showProducts={false} />
-</SiteLayout>
+      <div class="grid three reveal">
+        {products.map((p) => (
+          <a class="card card-stack-10" href={p.href}>
+            <h3>{p.name}</h3>
+            <p class="muted">{p.tagline}</p>
+            <div class="pill fit">Open -&gt;</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+
+
