@@ -22,3 +22,15 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+# Never allow backups in build/routing trees
+src/pages/**/*.bak*
+src/pages/**/*.bak_*
+src/pages/**/*.bak_before_*
+src/pages/**/*_bak*
+src/pages/**/*backup*
+src/pages/**/.*
+_bak_pages/
+src/styles/_backup_*/
+src/components/*.bak_*
+src/layouts/*.bak_*
+src/styles/*.bak_*
