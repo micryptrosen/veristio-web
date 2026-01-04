@@ -1,0 +1,41 @@
+<!DOCTYPE html>import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro"
+<BaseLayout title="Solutions — UltraPro" page="solutions">
+  <Breadcrumbs items={[{label:"Home", href:"/"},{label:"Solutions"}]} />
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="wrap reveal">
+        <span class="kicker"><span class="dot"></span> Solutions</span>
+        <h1>Outcomes for every stage of network operations.</h1>
+        <p>Verification-driven outcomes without changing how networks are run.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid two reveal">
+        <div class="card" id="reduce-risk">
+          <h3>Reduce change risk</h3>
+          <p>Pre-check gates, rollback planning, and post-change verification.</p>
+        </div>
+
+        <div class="card" id="faster-mttr">
+          <h3>Lower MTTR</h3>
+          <p>Repeatable verification that standardizes troubleshooting.</p>
+        </div>
+
+        <div class="card" id="site-cutovers">
+          <h3>Site cutovers</h3>
+          <p>Evidence for migrations and circuit swaps.</p>
+        </div>
+
+        <div class="card" id="audit">
+          <h3>Audit & governance</h3>
+          <p>Audit-ready evidence for reviews and compliance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

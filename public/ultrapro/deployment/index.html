@@ -1,0 +1,46 @@
+<!DOCTYPE html>import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro"
+<BaseLayout title="Deployment Options — UltraPro" page="deployment">
+  <Breadcrumbs items={[{label:"Home", href:"/"},{label:"Products", href:"/products"},{label:"Deployment options"}]} />
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="wrap reveal">
+        <span class="kicker"><span class="dot"></span> Platform</span>
+        <h1>Deployment Options</h1>
+        <p>UltraPro supports enterprise-friendly execution models without assuming persistent access or control.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid three reveal">
+        <div class="card">
+          <h3>Cloud</h3>
+          <p>Centralized execution with managed access.</p>
+        </div>
+
+        <div class="card">
+          <h3>On-prem</h3>
+          <p>Local execution inside restricted environments.</p>
+        </div>
+
+        <div class="card">
+          <h3>Hybrid</h3>
+          <p>Combine local execution with centralized evidence review.</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="card reveal">
+        <h3>Deployment notes</h3>
+        <p>
+          Add details: execution patterns, access requirements, security controls,
+          and evidence export options.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
