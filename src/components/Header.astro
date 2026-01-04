@@ -1,9 +1,13 @@
 ---
+const { currentPage = "" } = Astro.props;
 ---
+
 <header class="site-header">
-  <nav class="nav">
-    <a href="/overview">Overview</a>
-    <a href="/company">Company</a>
-    <a href="/legal">Legal &amp; Terms</a>
-  </nav>
+  <div class="container">
+    <nav class="nav">
+      <a href="/overview" class={currentPage === "overview" ? "active" : ""}>Overview</a>
+      <a href="/company" class={currentPage === "company" ? "active" : ""}>Company</a>
+      <a href="/legal" class={currentPage === "legal" ? "active" : ""}>Legal &amp; Terms</a>
+    </nav>
+  </div>
 </header>
